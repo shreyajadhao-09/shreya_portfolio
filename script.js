@@ -90,7 +90,7 @@
 (function () {
   const el = document.getElementById('typewriter');
   if (!el) return;
-  const roles = ['Full Stack Developer', 'Java Developer', 'Problem Solver'];
+  const roles = ['Full Stack Developer', 'Problem Solver', 'Software Developer', 'Frontend Developer', 'Backend Developer'];
   let ri = 0, ci = 0, deleting = false;
 
   function tick() {
