@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shreya Jadhao — Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="site-ambience" id="siteAmbience">
+  <div class="amb-orb amb1"></div>
+  <div class="amb-orb amb2"></div>
+  <div class="amb-orb amb3"></div>
+</div>
+<div class="scroll-glow" id="scrollGlow"></div>
+<div class="dot-grid"></div>
+<div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">SJ</span>
+      <span class="brand-text">
+        <strong>Shreya Jadhao</strong>
+        <small>Full Stack Developer</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <!-- NAV ACTIONS -->
+<div class="nav-actions">
+  <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+  </button>
+  
+  <!-- UPDATED: Points to Shreya_Resume.pdf so visitors can save it seamlessly -->
+  <a href="Shreya_Resume.pdf" download="Shreya_Resume.pdf" class="btn btn-primary btn-small" id="downloadCv" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+    Download CV
+  </a>
+  
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+  </div>
+  <div class="nav-progress" id="navProgress"></div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="aurora">
+    <div class="aurora-blob ab1"></div>
+    <div class="aurora-blob ab2"></div>
+    <div class="aurora-blob ab3"></div>
+  </div>
+  <div class="hero-shapes" id="heroShapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+    <div class="shape s5"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-copy" data-reveal>
+      <span class="eyebrow">Hello, I'm</span>
+      <h1 class="hero-name">
+        <span class="line">Shreya</span>
+        <span class="line gradient-text">Umesh Jadhao</span>
+      </h1>
+      <p class="hero-roles">
+        <span id="typewriter"></span><span class="type-cursor"></span>
+      </p>
+      <p class="hero-desc">
+        Computer Science &amp; Engineering student passionate about building scalable
+        web applications and solving real-world problems using modern technologies.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary magnetic">
+          Explore My Work
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline magnetic">
+          Contact Me
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
+        </a>
+      </div>
+      <div class="hero-social">
+        <span>Find me on</span>
+        <div class="social-icons">
+          <a href="https://github.com/shreyajadhao-09" aria-label="GitHub" class="social-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.73-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.42.36.78 1.08.78 2.17v3.22c0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg></a>
+          <a href="https://linkedin.com/in/shreya-jadhao-287498257" aria-label="LinkedIn" class="social-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM.5 8.98h9V23h-9V8.98ZM13 8.98h4.31v1.92h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.99 5.38 6.87V23h-4.7v-6.56c0-1.56-.03-3.57-2.18-3.57-2.18 0-2.51 1.7-2.51 3.46V23H13V8.98Z"/></svg></a>
+          <a href="mailto:shreyajadhao2004@gmail.com" aria-label="Email" class="social-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
+          <a href="#" aria-label="Code" class="social-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal>
+      <div class="tilt-wrap" id="tiltCard">
+        <div class="tilt-card">
+          <div class="tilt-glow"></div>
+          <div class="avatar-orb">
+            <svg class="avatar-sketch" viewBox="0 0 220 220" fill="none">
+              <defs>
+                <linearGradient id="sketchGrad" x1="0" y1="0" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#a78bfa"/>
+                  <stop offset="50%" stop-color="#60a5fa"/>
+                  <stop offset="100%" stop-color="#f472b6"/>
+                </linearGradient>
+              </defs>
+
+              <!-- shoulders / blazer silhouette -->
+              <path class="sketch-path" d="M30 208c4-36 24-56 36-64M190 208c-4-36-24-56-36-64" stroke="url(#sketchGrad)" stroke-width="2" stroke-linecap="round"/>
+              <path class="sketch-path" d="M30 208c10-6 28-10 80-10s70 4 80 10" stroke="url(#sketchGrad)" stroke-width="2" stroke-linecap="round"/>
+              <path class="sketch-path" d="M92 148 110 168 128 148" stroke="url(#sketchGrad)" stroke-width="1.6" stroke-linecap="round"/>
+              <path class="sketch-path" d="M110 168v14" stroke="url(#sketchGrad)" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.6"/>
+
+              <!-- long flowing hair -->
+              <path class="sketch-path" d="M70 42c-14 18-20 46-16 74-3 18-10 32-18 44" stroke="url(#sketchGrad)" stroke-width="1.6" stroke-linecap="round"/>
+              <path class="sketch-path" d="M150 42c14 18 20 46 16 74 3 18 10 32 18 44" stroke="url(#sketchGrad)" stroke-width="1.6" stroke-linecap="round"/>
+              <path class="sketch-path" d="M78 40c-8 14-10 34-6 56" stroke="url(#sketchGrad)" stroke-width="1.2" stroke-opacity="0.6"/>
+              <path class="sketch-path" d="M142 40c8 14 10 34 6 56" stroke="url(#sketchGrad)" stroke-width="1.2" stroke-opacity="0.6"/>
+
+              <!-- head outline -->
+              <path class="sketch-path" d="M110 24c-30 0-46 24-46 54 0 33 20 56 46 56s46-23 46-56c0-30-16-54-46-54Z" stroke="url(#sketchGrad)" stroke-width="2"/>
+
+              <!-- face-scan triangulated mesh -->
+              <path class="sketch-path facet" d="M110 58 90 66M110 58 130 66M90 66 130 66M90 66 76 86M90 66 96 82M130 66 144 86M130 66 124 82M90 66 110 82M130 66 110 82M96 82 110 82M124 82 110 82M76 86 96 82M144 86 124 82M76 86 86 104M144 86 134 104M96 82 86 104M124 82 134 104M110 82 100 108M110 82 120 108M86 104 100 108M134 104 120 108M100 108 120 108M100 108 110 116M120 108 110 116M86 104 94 126M134 104 126 126M100 108 94 126M120 108 126 126M110 116 94 126M110 116 126 126" stroke="url(#sketchGrad)" stroke-width="0.9" stroke-opacity="0.5"/>
+
+              <!-- face-scan nodes -->
+              <circle class="sketch-dot" cx="110" cy="58" r="1.6" fill="#a78bfa"/>
+              <circle class="sketch-dot" cx="90" cy="66" r="1.6" fill="#60a5fa"/>
+              <circle class="sketch-dot" cx="130" cy="66" r="1.6" fill="#f472b6"/>
+              <circle class="sketch-dot" cx="76" cy="86" r="1.4" fill="#a78bfa"/>
+              <circle class="sketch-dot" cx="144" cy="86" r="1.4" fill="#f472b6"/>
+              <circle class="sketch-dot" cx="96" cy="82" r="1.4" fill="#60a5fa"/>
+              <circle class="sketch-dot" cx="124" cy="82" r="1.4" fill="#60a5fa"/>
+              <circle class="sketch-dot" cx="110" cy="82" r="1.6" fill="#a78bfa"/>
+              <circle class="sketch-dot" cx="86" cy="104" r="1.4" fill="#f472b6"/>
+              <circle class="sketch-dot" cx="134" cy="104" r="1.4" fill="#a78bfa"/>
+              <circle class="sketch-dot" cx="100" cy="108" r="1.4" fill="#60a5fa"/>
+              <circle class="sketch-dot" cx="120" cy="108" r="1.4" fill="#60a5fa"/>
+              <circle class="sketch-dot" cx="110" cy="116" r="1.6" fill="#f472b6"/>
+              <circle class="sketch-dot" cx="94" cy="126" r="1.4" fill="#a78bfa"/>
+              <circle class="sketch-dot" cx="126" cy="126" r="1.4" fill="#f472b6"/>
+
+              <!-- outer scan accent nodes -->
+              <circle class="sketch-dot" cx="46" cy="70" r="2.4" fill="#60a5fa"/>
+              <circle class="sketch-dot" cx="174" cy="88" r="2.4" fill="#f472b6"/>
+              <circle class="sketch-dot" cx="156" cy="140" r="2.2" fill="#a78bfa"/>
+              <path class="sketch-path" d="M46 70h-14M174 88h16M156 140h16" stroke="url(#sketchGrad)" stroke-width="1.2" stroke-opacity="0.5"/>
+            </svg>
+            <div class="orb-ring r1"></div>
+            <div class="orb-ring r2"></div>
+            <div class="orb-ring r3"></div>
+          </div>
+          <div class="tilt-label">
+            <strong>Shreya Jadhao</strong>
+            <small>Full Stack Developer</small>
+          </div>
+          <div class="tilt-tag"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        </div>
+        <div class="tilt-platform"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-bar" data-reveal>
+    <div class="stat">
+      <div class="stat-icon icon-purple"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+      <div class="stat-num" data-count="2" data-suffix="+">0</div>
+      <div class="stat-label">Years of Learning</div>
+      <div class="stat-sub">Continuous growth</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon icon-pink"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+      <div class="stat-num" data-count="5" data-suffix="+">0</div>
+      <div class="stat-label">Projects Completed</div>
+      <div class="stat-sub">Web &amp; Software</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon icon-amber"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg></div>
+      <div class="stat-num" data-count="10" data-suffix="+">0</div>
+      <div class="stat-label">Technologies</div>
+      <div class="stat-sub">Mastered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon icon-green"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M17 4h3a3 3 0 0 1-3 5M7 4H4a3 3 0 0 0 3 5"/></svg></div>
+      <div class="stat-num" data-count="3" data-suffix="+">0</div>
+      <div class="stat-label">Certifications</div>
+      <div class="stat-sub">Achievements</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon icon-violet"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></div>
+      <div class="stat-num" data-count="100" data-suffix="+">0</div>
+      <div class="stat-label">Code Commits</div>
+      <div class="stat-sub">On GitHub</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy" data-reveal>
+      <span class="eyebrow"><span class="dot"></span>About Me</span>
+      <h2 class="section-title">Turning ideas into <span class="gradient-text">real-world solutions</span></h2>
+      <p>I am a Computer Science &amp; Engineering student with hands-on experience in full-stack
+        web development. I enjoy building responsive, user-friendly applications and working on
+        innovative ideas that solve genuine problems.</p>
+      <a href="#projects" class="btn btn-outline btn-small">Know More About Me
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="about-card" data-reveal>
+      <div class="globe-canvas-wrap"><canvas id="globeCanvas"></canvas></div>
+      <ul class="info-list">
+        <li>
+          <span class="info-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+          <div><small>Name</small><strong>Shreya Umesh Jadhao</strong></div>
+        </li>
+        <li>
+          <span class="info-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+          <div><small>Email</small><strong>shreyajadhao2004@gmail.com</strong></div>
+        </li>
+        <li>
+          <span class="info-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><small>Location</small><strong>Yavatmal, Maharashtra, India</strong></div>
+        </li>
+        <li>
+          <span class="info-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92Z"/></svg></span>
+          <div><small>Phone</small><strong>+91 8010095488</strong></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span class="dot"></span>My Skills</span>
+      <h2 class="section-title">Technologies I <span class="gradient-text">work with</span></h2>
+    </div>
+    <div class="skills-carousel" data-reveal>
+      <button class="carousel-arrow left" id="skillsPrev" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="skills-track" id="skillsTrack"></div>
+      <button class="carousel-arrow right" id="skillsNext" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-inner">
+    <div class="section-head split" data-reveal>
+      <div>
+        <span class="eyebrow"><span class="dot"></span>My Projects</span>
+        <h2 class="section-title">Some things I've <span class="gradient-text">built</span></h2>
+      </div>
+      <a href="https://github.com/shreyajadhao-09" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View All Projects</a>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+
+    <div class="more-projects-head" data-reveal>
+      <span class="mini-eyebrow">More Builds</span>
+      <h3>Smaller experiments &amp; clones</h3>
+    </div>
+    <div class="mini-project-grid" id="miniProjectGrid"></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs" id="certs">
+  <div class="section-inner">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow"><span class="dot"></span>Certifications &amp; Education</span>
+      <h2 class="section-title">My learning <span class="gradient-text">journey</span></h2>
+    </div>
+    <div class="timeline-wrap" data-reveal>
+      <button class="carousel-arrow left" id="certPrev" aria-label="Scroll left">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="timeline-track" id="certTrack"></div>
+      <button class="carousel-arrow right" id="certNext" aria-label="Scroll right">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-grid">
+    <div class="contact-copy" data-reveal>
+      <span class="eyebrow"><span class="dot"></span>Get In Touch</span>
+      <h2 class="section-title">Let's work <span class="gradient-text">together</span></h2>
+      <p>Got a project in mind or want to connect? Feel free to send me a message.</p>
+      <div class="envelope-3d" id="envelope3d">
+        <div class="env-body">
+          <div class="env-flap"></div>
+        </div>
+        <div class="env-particles"></div>
+      </div>
+    </div>
+    <form class="contact-form" data-reveal id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="38dc4731-c655-4e9d-91c7-dd0174efba6d">
+      <input type="hidden" name="to" value="shreyaujadhao312004@gmail.com">
+      <div class="form-row">
+        <div class="field">
+          <input type="text" name="name" placeholder=" " required>
+          <label>Your Name</label>
+        </div>
+        <div class="field">
+          <input type="email" name="email" placeholder=" " required>
+          <label>Your Email</label>
+        </div>
+      </div>
+      <div class="field">
+        <input type="text" name="subject" placeholder=" ">
+        <label>Subject</label>
+      </div>
+      <div class="field">
+        <textarea rows="5" name="message" placeholder=" " required></textarea>
+        <label>Your Message</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">
+        Send Message
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
+      </button>
+      <div class="form-success" id="formSuccess">Message sent — thanks for reaching out! ✦</div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <span>© 2026 Shreya Jadhao. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+    </div>
+    <span class="footer-credit">Designed &amp; built with <span class="heart">♥</span> by Shreya</span>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
