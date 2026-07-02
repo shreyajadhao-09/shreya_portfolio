@@ -40,7 +40,7 @@ const PROJECTS = [
 
 const MORE_PROJECTS = [
   {
-    title:"Amazon Homepage Clone",
+    title:"E-Commerce UI Project",
     tag:"UI Clone",
     desc:"Pixel-close recreation of the Amazon homepage focused on responsive layout and clean component structure.",
     stack:["HTML5","CSS3","JavaScript"],
@@ -49,7 +49,7 @@ const MORE_PROJECTS = [
     github:"https://github.com/shreyajadhao-09/amazonhomepageclone"
   },
   {
-    title:"Spotify Clone",
+    title:"Music Streaming UI",
     tag:"UI Clone",
     desc:"Music-player style interface inspired by Spotify, built with interactive playback controls and a responsive layout.",
     stack:["HTML5","CSS3","JavaScript"],
