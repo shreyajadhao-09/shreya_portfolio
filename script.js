@@ -554,44 +554,18 @@ function staggerIn(nodeList, opts = {}) {
 (function () {
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const button = form.querySelector('button[type="submit"]');
     const originalButtonText = button.innerHTML;
-    const formData = new FormData(form);
     success.classList.remove('show');
     button.disabled = true;
     button.innerHTML = 'Sending...';
 
-    if (formData.get('access_key') === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-      success.textContent = 'Add your Web3Forms access key first.';
-      success.classList.add('show');
-      button.disabled = false;
-      button.innerHTML = originalButtonText;
-      return;
-    }
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: formData
-      });
-      const result = await response.json();
-      if (!result.success) throw new Error(result.message || 'Message failed');
-
-      success.textContent = 'Message sent — thanks for reaching out! ✦';
-      success.classList.add('show');
-      form.reset();
-    } catch (error) {
-      success.textContent = 'Opening secure submit page...';
-      success.classList.add('show');
-      form.submit();
-      return;
-    } finally {
-      button.disabled = false;
-      button.innerHTML = originalButtonText;
-    }
+    success.textContent = 'Contact form is not configured. Please email me at shreyaujadhao312004@gmail.com.';
+    success.classList.add('show');
+    button.disabled = false;
+    button.innerHTML = originalButtonText;
 
     if (window.gsap) {
       gsap.fromTo('.env-body', { rotate: -2 }, { rotate: 6, duration: 0.15, yoyo: true, repeat: 5, ease: 'power1.inOut' });
